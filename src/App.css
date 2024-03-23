@@ -63,6 +63,7 @@ body {
   position: relative;
   background-color: transparent;
   transition: 0.3s ease-in-out;
+  border-radius: 10px;
 }
 .navbar-text button span {
   z-index: 1;
@@ -77,6 +78,7 @@ body {
   top: 0;
   z-index: -1;
   transition: 0.3s ease-in-out;
+  border-radius: 10px;
 }
 .navbar-text button:hover {
   color:darkslategrey;
@@ -155,6 +157,106 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
 
+.navLogo {
+  height: 70px;
+  width: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: red;
+}
+
+/* banner section */
+.banner {
+  margin-top: 0;
+  padding: 200px 0 100px 0;
+  background-color: darkslategray;
+  /* background-image: url();
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient();
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+.banner p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+.banner #btnseemore {
+  color: #000000;
+  font-weight: 7000;
+  font-size: 15px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: #fff 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
+.banner #btnletsconnect {
+  color: #fff;
+  font-weight: 7000;
+  font-size: 15px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: #808080 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+.banner .button + .banner .button {
+  margin: 10px;
+}
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner button:hover svg{
+  margin-left: 25px;
+}
+.banner img {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translate(-20px, 0);
+  } 25% {
+    transform: translate(0px, 20px);
+  } 50% {
+    transform: translate(20px, 0);
+  } 75% {
+    transform: translate(0px, -20px);
+  } 100% {
+    transform: translate(-20px, 0);
+  }
+}
+/* banner section */
 
 
 
