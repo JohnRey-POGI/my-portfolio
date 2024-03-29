@@ -11,14 +11,6 @@ export const Home = () => {
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000; //type duration per word
 
-    useEffect (() =>{
-        let ticker = setInterval(() => {
-            tick();
-        }, delta);
-
-        return () => { clearInterval(ticker)}
-    }, [text])
-
     const tick = () => {
         let i = loopNum % textChanging.length;
         let fullText = textChanging[i];
@@ -39,6 +31,13 @@ export const Home = () => {
             setDelta(500);
         }
     }
+    useEffect (() =>{
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => { clearInterval(ticker)}
+    }, [text])
 
     const imgstyle = {
         height: "300px"
