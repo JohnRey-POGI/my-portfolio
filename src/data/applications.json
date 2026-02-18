@@ -1,0 +1,92 @@
+[
+    {
+        "title": "Visual Studio",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "VsCode",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "NetBeans",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "PyCharm",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "Android Studio",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "XAMPP",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "MySQL Workbench",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "Cpanel",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cpanel/cpanel-original.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "Blender",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Filmora",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/filmora/filmora-plain.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Unity",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Photoshop",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "MS Office",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Adobe Acrobat",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Nitro Pro",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "WordPress",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "ChatGPT",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-plain.svg",
+        "category": "non-programmer"
+    },
+    {
+        "title": "Copilot",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg",
+        "category": "non-programmer"
+    }
+]

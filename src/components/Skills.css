@@ -1,0 +1,265 @@
+/* Skills Section Styles */
+
+.skills {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 700;
+}
+
+.skills h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Skills Section Container */
+.skills-section {
+    margin-bottom: 60px;
+}
+
+.skills-category-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Skills Slider Container */
+.skills-slider {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(var(--accent-rgb), 0.03);
+    border-radius: 12px;
+    padding: 40px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--accent-rgb), 0.08);
+}
+
+/* Skills Track - The actual scrolling element */
+.skills-track {
+    display: flex;
+    width: fit-content;
+    gap: 30px;
+    padding: 0 30px;
+}
+
+/* Left-scrolling track (Programming Languages) */
+.skills-track-left {
+    animation: scroll-left 60s linear infinite;
+}
+
+/* Right-scrolling track (Applications & Tools) */
+.skills-track-right {
+    animation: scroll-right 60s linear infinite;
+}
+
+/* Pause animation on hover */
+.skills-slider:hover .skills-track {
+    animation-play-state: paused;
+}
+
+/* Left scroll animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Right scroll animation */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Individual Skill Item */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 100px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Skill Icon */
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.skill-icon:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.skill-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Skill Title */
+.skill-item p {
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+
+    .skills h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .skills-slider {
+        padding: 30px 0;
+    }
+
+    .skills-track {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .skill-item {
+        min-width: 90px;
+        gap: 10px;
+    }
+
+    .skill-icon {
+        width: 70px;
+        height: 70px;
+        padding: 8px;
+    }
+
+    .skill-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .skill-item p {
+        font-size: 0.8rem;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes scroll-right {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .skills {
+        padding: 40px 10px;
+    }
+
+    .skills h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .skills h2::after {
+        width: 60px;
+    }
+
+    .skills-slider {
+        padding: 20px 0;
+    }
+
+    .skills-track {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .skill-item {
+        min-width: 80px;
+        gap: 8px;
+    }
+
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+        padding: 6px;
+    }
+
+    .skill-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .skill-item p {
+        font-size: 0.75rem;
+    }
+}
+
+/* extra utility moved from App.css */
+.skillCont:hover {
+    background: rgba(120, 120, 120, 1);
+}
+
+@keyframes slide { 
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(calc(var(--contHeight) * -1));
+    }
+}

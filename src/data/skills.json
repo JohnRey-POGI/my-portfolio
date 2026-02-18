@@ -44,13 +44,9 @@
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg"
     },
     {
-        "title": "MySQL",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+        "title": "SQL",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg"
     }, 
-    {
-        "title": "nodejs",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
-    },
     {
         "title": "php",
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg"
@@ -62,10 +58,6 @@
     {
         "title": "react",
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-    },
-    {
-        "title": "typescript",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
     },
     {
         "title": "visualbasic",
@@ -116,12 +108,8 @@
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg"
     },
     {
-        "title": "MySQL",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-    }, 
-    {
-        "title": "nodejs",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
+        "title": "SQL",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg"
     },
     {
         "title": "php",
@@ -134,10 +122,6 @@
     {
         "title": "react",
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-    },
-    {
-        "title": "typescript",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
     },
     {
         "title": "visualbasic",

@@ -1,34 +1,65 @@
-import { useState, useEffect } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
-import navLogo from '../assets/img/Logo_of_TWICE.svg';
+import { useState, useEffect, useRef } from "react";
+import './NavBar.css';
+import { Navbar, Container, Nav } from "react-bootstrap";
+import linkedinIcon from '../assets/img/linkedin-icon.svg';
+import gitIcon from '../assets/img/git-icon.svg';
+import facebookIcon from '../assets/img/facebook-icon.svg';
+import instagramIcon from '../assets/img/instagram-icon.svg';
+import navLogo from '../assets/img/Profile LOGO.svg';
 
 export const NavBar = () => {
     const [activeLink, setActiveLink]= useState('home');
     const [scrolled, setScrolled] = useState(false);
+    const [expanded, setExpanded] = useState(false); // Track mobile menu state
+    const [isNavHidden, setIsNavHidden] = useState(false); // Track navbar visibility
+    const lastScrollYRef = useRef(0);
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.scrollY > 50 ) {
+            const currentScrollY = window.scrollY;
+            const footerSection = document.getElementById('footer');
+            
+            // Set scrolled state for styling when scrolled past 50px
+            if (currentScrollY > 50) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
-        }
-        window.addEventListener('scroll', onScroll);
 
+            // Hide navbar when footer section becomes visible on device
+            if (footerSection) {
+                const footerPosition = footerSection.offsetTop;
+                //const footerHeight = footerSection.offsetHeight;
+                const windowHeight = window.innerHeight;
+                
+                // Hide navbar when footer is in viewport
+                if (currentScrollY + windowHeight > footerPosition) {
+                    setIsNavHidden(true);
+                } else {
+                    // Show navbar when footer is not in viewport
+                    setIsNavHidden(false);
+                }
+            }
+
+            lastScrollYRef.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
     }, [])
 
-const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-}
+    const onUpdateActiveLink = (value) => {
+        setActiveLink(value);
+        setExpanded(false); // Close mobile menu when link is clicked
+    }
 
+    const handleContactClick = () => {
+        setExpanded(false); // Close mobile menu
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
 
     return (
-      <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="lg" className={`${scrolled ? "scrolled" : ""} ${isNavHidden ? "nav-hidden" : "nav-visible"}`} expanded={expanded} onToggle={(expanded) => setExpanded(expanded)}>
         <Container>
           <Navbar.Brand href="#home">
             <img src={navLogo} alt="logo" className="navLogo"></img>
@@ -39,28 +70,19 @@ const onUpdateActiveLink = (value) => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+              <Nav.Link href="#about" className={activeLink === 'about' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
               <Nav.Link href="#skills" className={activeLink === 'skills' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#project" className={activeLink === 'project' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('projects')}>Project</Nav.Link>
-              {/* nested dropdown */}
-              <NavDropdown title="Services" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#contact" className={activeLink === 'contact' ? "active navbar-link" : "navbar-link"} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
             </Nav>
             <span className="navbar-text">
                 <div className="social-icon">
-                    <a href="#home"><img src={navIcon1} alt=""></img></a>
-                    <a href="#skills"><img src={navIcon2} alt=""></img></a>
-                    <a href="#projects"><img src={navIcon3} alt=""></img></a>
+                    <a href="https://www.linkedin.com/in/john-rey-sta-ana-142199350/" target="_blank" rel="noopener noreferrer"><img src={linkedinIcon} alt="LinkedIn"></img></a>
+                    <a href="https://github.com/JohnRey-POGI" target="_blank" rel="noopener noreferrer"><img src={gitIcon} alt="GitHub"></img></a>
+                    <a href="https://www.facebook.com/johnrey.staana.18" target="_blank" rel="noopener noreferrer"><img src={facebookIcon} alt="Facebook"></img></a>
+                    <a href="https://www.instagram.com/johnrey_staana/" target="_blank" rel="noopener noreferrer"><img src={instagramIcon} alt="Instagram"></img></a>
                 </div>
-                <button className="vvd" onClick={() => console.log('connected')}>
+                <button className="vvd" onClick={handleContactClick}>
                   <span>Let's Connect</span>
                 </button>
             </span>

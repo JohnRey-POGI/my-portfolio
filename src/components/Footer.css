@@ -1,0 +1,219 @@
+/* Footer Styles */
+
+.footer {
+    background: linear-gradient(135deg, var(--bg) 0%, var(--surface-2) 100%);
+    color: var(--text);
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+    border-top: 3px solid var(--accent);
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Sections */
+.footer-section {
+    margin-bottom: 40px;
+}
+
+.footer-section h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h5::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-2);
+    margin-top: 8px;
+}
+
+.footer-section p {
+    color: rgba(var(--text-rgb), 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(var(--text-rgb), 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+/* Social Icon Links */
+.social-icons-footer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 2px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons-footer a::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: var(--accent);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+}
+
+.social-icons-footer a:hover::before {
+    transform: scale(1);
+}
+
+.social-icons-footer a img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.social-icons-footer a:hover img {
+    /*filter: brightness(0) saturate(100%) invert(100%);*/
+    filter: brightness(0);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(var(--accent-rgb), 0.1);
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    color: rgba(var(--text-rgb), 0.6);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 50px 15px 20px;
+        margin-top: 60px;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .footer-section h5 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p {
+        font-size: 0.95rem;
+    }
+
+    .footer-links a {
+        font-size: 0.95rem;
+    }
+
+    .social-icons-footer a {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-icons-footer a img {
+        width: 55%;
+        height: 55%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        margin-top: 40px;
+        padding: 40px 15px 15px;
+    }
+
+    .footer-section {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .footer-section h5 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section h5::after {
+        display: none;
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .social-icons-footer {
+        justify-content: center;
+    }
+
+    .social-icons-footer a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .social-icons-footer a img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+    }
+}
