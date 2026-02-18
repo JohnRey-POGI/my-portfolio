@@ -72,7 +72,7 @@ npm run deploy
 
 I'm always open to discussing new opportunities and interesting projects!
 
-- **Email**: [Email Me](mailto:johnreystaana@gmail.com)
+- **Email**: [johnreystaana@gmail.com](mailto:johnreystaana@gmail.com)
 - **LinkedIn**: [https://www.linkedin.com/in/john-rey-sta-ana/](https://www.linkedin.com/in/john-rey-sta-ana-142199350/)
 - **GitHub**: [https://github.com/johnrey-pogi](https://github.com/johnrey-pogi)
 
