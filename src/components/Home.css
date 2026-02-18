@@ -78,12 +78,62 @@
 }
 
 /* Profile image animation */
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  /* clip-path: polygon(50% 0%, 100% 50%, 50% 50%, 0% 50%); */
+  clip-path: polygon(92% 50%, 50% 8%, 8% 50%, 0 50%, 50% 0, 100% 50%);
+  z-index: 1;
+  border: 4px solid var(--surface-2);
+  box-sizing: border-box;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  /* clip-path: polygon(50% 50%, 100% 50%, 50% 100%, 0% 50%); */
+  clip-path: polygon(8% 50%, 50% 92%, 92% 50%, 100% 50%, 50% 100%, 0 50%);
+  z-index: 3;
+  border: 4px solid var(--surface-2);
+  box-sizing: border-box;
+}
+
 .banner img {
+  position: absolute;
+  top: 0%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
   animation: floaty 4s ease-in-out infinite;
   transition: transform 0.3s ease;
+  border-radius: 44%;
 }
+
 @keyframes floaty {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px) rotate(-1deg); }
   100% { transform: translateY(0px); }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    margin-top: 50px;
+  }
 }

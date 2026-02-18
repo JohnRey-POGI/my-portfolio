@@ -17,8 +17,6 @@ const Projects = () => {
             title: 'Game Development - Unity & C#',
             description: 'An unlockables-type game developed with Unity and C# backend. This project showcases game mechanics, progression systems, and interactive gameplay features with a robust unlock system for players to achieve and discover.',
             technologies: ['Unity', 'C#', 'Blender', 'Photoshop', 'Filmora'],
-            link: 'https://github.com',
-            demo: 'https://example.com',
             images: [
                 firstP1,
                 firstP2,
@@ -31,8 +29,6 @@ const Projects = () => {
             title: 'Information System (IS) - Web Application',
             description: 'A comprehensive web-based information system built with Microsoft Azure services. Features include report generation, contract management, and document handling. The system provides excel export capabilities and uses RDLC for advanced reporting. Utilizes stored procedures for optimized database operations.',
             technologies: ['VB.NET', 'ASP.NET', 'jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'MySQL', 'Azure', 'RDLC', 'Excel Generation'],
-            link: 'https://github.com',
-            demo: 'https://example.com',
             images: [
                 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop',
                 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop'
@@ -43,8 +39,6 @@ const Projects = () => {
             title: 'WordPress CMS with Custom Enhancements',
             description: 'A WordPress-based content management system using Elegant theme with custom CSS modifications and Google Maps API integration. The customizations address layout limitations and provide enhanced location-based features for improved user experience.',
             technologies: ['WordPress', 'Elegant Theme', 'Custom CSS', 'Google Maps API'],
-            link: 'https://github.com',
-            demo: 'https://example.com',
             images: [
                 thirdP1,
                 thirdP2,
@@ -97,10 +91,6 @@ const Projects = () => {
                                 {project.technologies.map(tech => (
                                     <span key={tech} className="tech-tag">{tech}</span>
                                 ))}
-                            </div>
-                            <div className="project-links">
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>GitHub</a>
-                                <a href={project.demo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Live Demo</a>
                             </div>
                         </div>
                     ))}

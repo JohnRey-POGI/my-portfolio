@@ -43,7 +43,7 @@ export const Home = () => {
     }, [delta, loopNum, isDeleting, text])
 
     const imgstyle = {
-        height: "300px"
+        height: "350px"
     }
 
     // Navigation handlers for the buttons
@@ -78,7 +78,9 @@ export const Home = () => {
                         </Col>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <Image src={howm} style={imgstyle} roundedCircle></Image>
+                        <div className="image-container">
+                            <Image src={howm} style={imgstyle}></Image>
+                        </div>
                     </Col>
                 </Row>
             </Container>
