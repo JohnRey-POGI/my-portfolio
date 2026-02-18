@@ -123,7 +123,11 @@
   z-index: 2;
   animation: floaty 4s ease-in-out infinite;
   transition: transform 0.3s ease;
+}
+
+.image-container img {
   border-radius: 44%;
+  height: 350px;;
 }
 
 @keyframes floaty {
@@ -135,5 +139,10 @@
 @media (max-width: 768px) {
   .image-container {
     margin-top: 50px;
+    height: 350px;
+    width: 350px;
+  }
+  .image-container img {
+    height: 300px;;
   }
 }

@@ -42,10 +42,6 @@ export const Home = () => {
         return () => { clearInterval(ticker)}
     }, [delta, loopNum, isDeleting, text])
 
-    const imgstyle = {
-        height: "350px"
-    }
-
     // Navigation handlers for the buttons
     const handleSeeMore = () => {
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
@@ -79,7 +75,7 @@ export const Home = () => {
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <div className="image-container">
-                            <Image src={howm} style={imgstyle}></Image>
+                            <Image src={howm}></Image>
                         </div>
                     </Col>
                 </Row>
