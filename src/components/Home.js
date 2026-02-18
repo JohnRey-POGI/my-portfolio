@@ -1,46 +1,55 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Col, Container, Image, Row } from "react-bootstrap"
 import { ArrowRightCircle} from "react-bootstrap-icons"
 import howm from '../assets/img/project/Me.png'
 import './Home.css';
 
-const TEXT_CHANGING = ["my name is John", "I'm Full Stack Developer", "I'm Technical Support Specialist", "I'm Game Developer", "I'm Creative Problem Solver"];
-const PERIOD = 1500;
+const TEXT_CHANGING = ["my name is John", "I'm Full Stack Developer", "I'm Technical Support Specialist", "I'm Game Developer"];
 
 export const Home = () => {
-    const [loopNum, setloopNum] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [text, setText] = useState('') //displaying by letter
-    const [delta, setDelta] = useState(300 - Math.random() * 100);
+    const [text, setText] = useState('');
+    const timeoutRef = useRef(null);
+    const textRef = useRef('');
+    const loopNumRef = useRef(0);
+    const isDeletingRef = useRef(false);
 
-    useEffect (() =>{
+    useEffect(() => {
         const tick = () => {
-            let i = loopNum % TEXT_CHANGING.length;
+            let i = loopNumRef.current % TEXT_CHANGING.length;
             let fullText = TEXT_CHANGING[i];
-            let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+            let currentText = textRef.current;
+            let updatedText = isDeletingRef.current ? fullText.substring(0, currentText.length - 1) : fullText.substring(0, currentText.length + 1);
 
-            setText(updatedText)
+            textRef.current = updatedText;
+            setText(updatedText);
 
-            if (isDeleting) {
-                setDelta(prevDelta => prevDelta / 2);
+            let delay;
+            if (isDeletingRef.current) {
+                delay = 50 + Math.random() * 50; // 50-100ms for deleting
+            } else if (updatedText === fullText) {
+                delay = 1000 + Math.random() * 1000; // 1-2s pause
+            } else {
+                delay = 100 + Math.random() * 100; // 100-200ms for typing
             }
 
-            if (!isDeleting && updatedText === fullText) {
-                setIsDeleting(true);
-                setDelta(PERIOD);
-            } else if (isDeleting && updatedText === '') {
-                setIsDeleting(false);
-                setloopNum(loopNum + 1);
-                setDelta(500);
+            if (!isDeletingRef.current && updatedText === fullText) {
+                isDeletingRef.current = true;
+            } else if (isDeletingRef.current && updatedText === '') {
+                isDeletingRef.current = false;
+                loopNumRef.current = loopNumRef.current + 1;
             }
-        }
 
-        let ticker = setInterval(() => {
-            tick();
-        }, delta);
+            timeoutRef.current = setTimeout(tick, delay);
+        };
 
-        return () => { clearInterval(ticker)}
-    }, [delta, loopNum, isDeleting, text])
+        tick();
+
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     // Navigation handlers for the buttons
     const handleSeeMore = () => {
