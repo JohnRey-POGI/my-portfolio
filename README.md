@@ -72,8 +72,8 @@ npm run deploy
 
 I'm always open to discussing new opportunities and interesting projects!
 
-- **Email**: [Your email here]
-- **LinkedIn**: [Your LinkedIn profile]
+- **Email**: [Email Me](mailto:johnreystaana@gmail.com)
+- **LinkedIn**: [https://github.com/johnrey-pogi](https://www.linkedin.com/in/john-rey-sta-ana-142199350/)
 - **GitHub**: [https://github.com/johnrey-pogi](https://github.com/johnrey-pogi)
 
 ## 📄 License
