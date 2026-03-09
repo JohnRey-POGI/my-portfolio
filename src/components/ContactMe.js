@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./ContactMe.css";
+import emailjs from "@emailjs/browser";
 
 export const ContactMe = () => {
     const formInitialDetails = {
@@ -80,29 +81,39 @@ export const ContactMe = () => {
         setcontactmeButtonText('Sending...');
 
         try {
-            // Simulate form submission (replace with actual EmailJS config)
-            // For now, we'll show a success message after 1.5 seconds
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const result = await emailjs.send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                {
+                    name: formDetails.name,
+                    email: formDetails.email,
+                    message: formDetails.message,
+                },
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            );
 
-            setStatus({
-                success: true,
-                message: "Message sent successfully! I'll get back to you soon."
-            });
-            setformDetails(formInitialDetails);
-            setcontactmeButtonText('Send');
-            
-            // Clear status message after 5 seconds
-            setTimeout(() => {
-                setStatus({});
-            }, 5000);
+            if (result.status === 200) {
+                setStatus({
+                    success: true,
+                    message: "Message sent successfully! I'll get back to you soon."
+                });
+                setformDetails(formInitialDetails);
+            }
+
         } catch (error) {
+            console.error("EmailJS Error:", error);
             setStatus({
                 success: false,
                 message: "Error sending message. Please try again later."
             });
-            setcontactmeButtonText('Send');
         } finally {
-            setIsLoading(false);
+            setcontactmeButtonText('Send');
+
+            // Optional: auto clear status after 5s
+            setTimeout(() => {
+                setStatus({});
+                setIsLoading(false);
+            }, 10000);
         }
     };
 

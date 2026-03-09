@@ -1,7 +1,7 @@
 /* Home / Banner styles */
 .banner {
   margin-top: 0;
-  padding: 200px 0 100px 0;
+  padding: 200px 10px 100px 10px;
   background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
 }
 .banner .tagline {
@@ -144,5 +144,9 @@
   }
   .image-container img {
     height: 300px;;
+  }
+
+  .banner {
+    padding-top: 100px;
   }
 }
