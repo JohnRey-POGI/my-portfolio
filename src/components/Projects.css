@@ -193,6 +193,18 @@
     .project-links a {
         width: 100%;
     }
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-close {
+        top: 5px;
+        right: 5px;
+        background: rgba(20, 20, 20, 0.6);
+        color: white;
+        backdrop-filter: blur(2px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -230,6 +242,11 @@
         padding: 10px 16px;
         font-size: 0.9rem;
     }
+
+    .modal-close {
+        font-size: 22px;
+        padding: 4px 10px;
+    }
 }
 
 /* Modal styles for image preview */
@@ -256,9 +273,8 @@
 
 .modal-image-wrap {
     width: 100%;
-    max-height: 80vh;
+    max-height: 70vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 8px;
@@ -266,9 +282,11 @@
 
 .modal-image-wrap img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(11,15,20,0.7);
+    animation: popIn 160ms ease-out;
 }
 
 .modal-close {

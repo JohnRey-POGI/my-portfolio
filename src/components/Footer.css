@@ -4,8 +4,9 @@
     background: linear-gradient(135deg, var(--bg) 0%, var(--surface-2) 100%);
     color: var(--text);
     padding: 60px 20px 20px;
-    margin-top: 80px;
     border-top: 3px solid var(--accent);
+    z-index: 30;
+    position: relative;
 }
 
 .footer .container {

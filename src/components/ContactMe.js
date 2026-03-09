@@ -119,65 +119,67 @@ export const ContactMe = () => {
 
     return (
         <section className="contact" id="contact">
-            <Container>
-                <Row className="align-items-center">
-                    <Col md={6}>
-                        <h1>Let's Connect</h1>
-                        <span>
-                            Have a project in mind or want to discuss opportunities? 
-                            I'd love to hear from you. Feel free to reach out through the form 
-                            or connect with me on my social media channels.
-                        </span>
-                    </Col>
-                    <Col md={6}>
-                        <h2>Get In Touch</h2>
-                        <form onSubmit={handleSubmit}>
-                            <Row>
-                                <Col sm={6} className="px-1">
-                                    <input 
-                                        type="text" 
-                                        value={formDetails.name} 
-                                        placeholder="Name" 
-                                        onChange={(e) => onFormUpdate('name', e.target.value)}
-                                    ></input>
-                                    {errors.name && <span className="form-error">{errors.name}</span>}
-                                </Col>
-                                <Col sm={6} className="px-1">
-                                    <input 
-                                        type="email" 
-                                        value={formDetails.email} 
-                                        placeholder="Email" 
-                                        onChange={(e) => onFormUpdate('email', e.target.value)}
-                                    ></input>
-                                    {errors.email && <span className="form-error">{errors.email}</span>}
-                                </Col>
-                                <Col sm={12} className="px-1">
-                                    <textarea 
-                                        type="text" 
-                                        value={formDetails.message} 
-                                        placeholder="Message" 
-                                        onChange={(e) => onFormUpdate('message', e.target.value)}
-                                    ></textarea>
-                                    {errors.message && <span className="form-error">{errors.message}</span>}
-                                </Col>
-                                <Col>
-                                    <button type="submit" disabled={isLoading}>
-                                        <span>{contactmeButtonText}</span>
-                                    </button>
-                                </Col>
-                                {
-                                    status.message && 
-                                    <Col sm={12}>
-                                        <div className={`status-message ${status.success ? 'status-success' : 'status-error'}`}>
-                                            {status.message}
-                                        </div>
+            <div className="section-content">
+                <Container>
+                    <Row className="align-items-center">
+                        <Col md={6}>
+                            <h1>Let's Connect</h1>
+                            <span>
+                                Have a project in mind or want to discuss opportunities? 
+                                I'd love to hear from you. Feel free to reach out through the form 
+                                or connect with me on my social media channels.
+                            </span>
+                        </Col>
+                        <Col md={6}>
+                            <h2>Get In Touch</h2>
+                            <form onSubmit={handleSubmit}>
+                                <Row>
+                                    <Col sm={6} className="px-1">
+                                        <input 
+                                            type="text" 
+                                            value={formDetails.name} 
+                                            placeholder="Name" 
+                                            onChange={(e) => onFormUpdate('name', e.target.value)}
+                                        ></input>
+                                        {errors.name && <span className="form-error">{errors.name}</span>}
                                     </Col>
-                                }
-                            </Row>
-                        </form>
-                    </Col>
-                </Row>
-            </Container>
+                                    <Col sm={6} className="px-1">
+                                        <input 
+                                            type="email" 
+                                            value={formDetails.email} 
+                                            placeholder="Email" 
+                                            onChange={(e) => onFormUpdate('email', e.target.value)}
+                                        ></input>
+                                        {errors.email && <span className="form-error">{errors.email}</span>}
+                                    </Col>
+                                    <Col sm={12} className="px-1">
+                                        <textarea 
+                                            type="text" 
+                                            value={formDetails.message} 
+                                            placeholder="Message" 
+                                            onChange={(e) => onFormUpdate('message', e.target.value)}
+                                        ></textarea>
+                                        {errors.message && <span className="form-error">{errors.message}</span>}
+                                    </Col>
+                                    <Col>
+                                        <button type="submit" disabled={isLoading}>
+                                            <span>{contactmeButtonText}</span>
+                                        </button>
+                                    </Col>
+                                    {
+                                        status.message && 
+                                        <Col sm={12}>
+                                            <div className={`status-message ${status.success ? 'status-success' : 'status-error'}`}>
+                                                {status.message}
+                                            </div>
+                                        </Col>
+                                    }
+                                </Row>
+                            </form>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </section>
     )
 }

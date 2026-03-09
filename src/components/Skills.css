@@ -3,8 +3,8 @@
 .skills {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+    overflow-x: hidden; /* Prevent horizontal scroll caused by wide animation tracks */
     min-height: 100vh;
-    display: flex;
     align-items: center;
 }
 

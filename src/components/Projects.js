@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Container } from "react-bootstrap";
 import './Projects.css';
+
+import Modal from './Modal'; // Import our new portal-based modal
 
 import firstP1 from '../assets/img/project/p1-1.jpg'
 import firstP2 from '../assets/img/project/p1-2.jpg'
@@ -77,42 +80,43 @@ const Projects = () => {
 
     return (
         <section id="projects" className="projects">
-            <div className="container">
-                <h2>My Projects</h2>
-                <div className="projects-grid">
-                    {projects.map(project => (
-                        <div key={project.id} className="project-card" onClick={() => openModal(project, 0)}>
-                            <div className="project-image">
-                                <img src={project.images[0]} alt={project.title} />
+            <div className="section-content">
+                <Container>
+                    <h2>My Projects</h2>
+                    <div className="projects-grid">
+                        {projects.map(project => (
+                            <div key={project.id} className="project-card" onClick={() => openModal(project, 0)}>
+                                <div className="project-image">
+                                    <img src={project.images[0]} alt={project.title} />
+                                </div>
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+                                <div className="technologies">
+                                    {project.technologies.map(tech => (
+                                        <span key={tech} className="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
                             </div>
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <div className="technologies">
-                                {project.technologies.map(tech => (
-                                    <span key={tech} className="tech-tag">{tech}</span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {isOpen && currentProject && (
-                    <div className="modal-overlay" onClick={closeModal}>
-                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="modal-close" onClick={closeModal} aria-label="Close">×</button>
-                            <div className="modal-image-wrap">
-                                <img src={currentProject.images[currentIndex]} alt={`${currentProject.title} preview ${currentIndex + 1}`} />
-                            </div>
-                            <div className="modal-controls">
-                                <button className="modal-prev" onClick={prevImage} aria-label="Previous image">‹ Prev</button>
-                                <button className="modal-next" onClick={nextImage} aria-label="Next image">Next ›</button>
-                            </div>
-                            {currentProject.images.length > 1 && (
-                                <div className="modal-counter">{currentIndex + 1} / {currentProject.images.length}</div>
-                            )}
-                        </div>
+                        ))}
                     </div>
-                )}
+
+                    <Modal isOpen={isOpen && !!currentProject} onClose={closeModal}>
+                        {currentProject && (
+                            <>
+                                <div className="modal-image-wrap">
+                                    <img src={currentProject.images[currentIndex]} alt={`${currentProject.title} preview ${currentIndex + 1}`} />
+                                </div>
+                                <div className="modal-controls">
+                                    <button className="modal-prev" onClick={prevImage} aria-label="Previous image">‹ Prev</button>
+                                    <button className="modal-next" onClick={nextImage} aria-label="Next image">Next ›</button>
+                                </div>
+                                {currentProject.images.length > 1 && (
+                                    <div className="modal-counter">{currentIndex + 1} / {currentProject.images.length}</div>
+                                )}
+                            </>
+                        )}
+                    </Modal>
+                </Container>
             </div>
         </section>
     );

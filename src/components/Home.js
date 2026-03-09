@@ -70,25 +70,27 @@ export const Home = () => {
     // }
     return (
         <section className="banner" id="home">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">Welcome to my WORLD</span>
-                        <h1>{`Hi `}<span className="wrap">{text}</span></h1>
-                        <p>I'm a passionate developer with expertise in building modern web applications. I specialize in creating responsive designs and robust backend solutions. Let's build something amazing together!</p>
-                        <Col className="d-flex">
-                            <button id="btnseemore" onClick={handleSeeMore}>See My Work&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
-                            &nbsp;
-                            <button id="btnletsconnect" onClick={handleLetsConnect}>Get In Touch&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
+            <div className="section-content">
+                <Container>
+                    <Row className="align-items-center">
+                        <Col xs={12} md={6} xl={7}>
+                            <span className="tagline">Welcome to my WORLD</span>
+                            <h1>{`Hi `}<span className="wrap">{text}</span></h1>
+                            <p>I'm a passionate developer with expertise in building modern web applications. I specialize in creating responsive designs and robust backend solutions. Let's build something amazing together!</p>
+                            <Col className="d-flex">
+                                <button id="btnseemore" onClick={handleSeeMore}>See My Work&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
+                                &nbsp;
+                                <button id="btnletsconnect" onClick={handleLetsConnect}>Get In Touch&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
+                            </Col>
                         </Col>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <div className="image-container">
-                            <Image src={howm}></Image>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+                        <Col xs={12} md={6} xl={5}>
+                            <div className="image-container">
+                                <Image src={howm}></Image>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </section>
     )
 
