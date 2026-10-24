@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from "react-bootstrap";
+import { TicketPerforated, CloudArrowUp, WindowStack, FileEarmarkBarGraph } from "react-bootstrap-icons";
 import './Projects.css';
 
 import Modal from './Modal'; // Import our new portal-based modal
@@ -13,29 +14,39 @@ import thirdP1 from '../assets/img/project/p3-1.png'
 import thirdP2 from '../assets/img/project/p3-2.png'
 import thirdP3 from '../assets/img/project/p3-3.png'
 
-const Projects = () => {
+export const Projects = () => {
     const projects = [
         {
-            id: 1,
-            title: 'Game Development - Unity & C#',
-            description: 'An unlockables-type game developed with Unity and C# backend. This project showcases game mechanics, progression systems, and interactive gameplay features with a robust unlock system for players to achieve and discover.',
-            technologies: ['Unity', 'C#', 'Blender', 'Photoshop', 'Filmora'],
-            images: [
-                firstP1,
-                firstP2,
-                firstP3,
-                firstP4
-            ]
+            id: 4,
+            title: 'AWS Migration Ticketing System',
+            description: "An internal ticketing system built specifically for Inland Corporation's AWS migration, used to log, assign, and track migration issues and requests. Developed with AI-assisted tooling and deployed with an SSL certificate for secure HTTPS access.",
+            technologies: ['Web App', 'AI-Assisted Development', 'SSL Certificate', 'Deployment'],
+            icon: TicketPerforated,
+            images: []
+        },
+        {
+            id: 5,
+            title: 'SAP Business One Upgrade & AWS Cloud Migration',
+            description: "Took part in upgrading the company's SAP Business One to a newer version and moving its on-premise servers to the AWS cloud. Covered basic SAP B1 administration and how in-house applications connect and integrate with SAP.",
+            technologies: ['SAP Business One', 'AWS EC2', 'Cloud Migration', 'SAP Administration', 'SAP Integration'],
+            icon: CloudArrowUp,
+            images: []
+        },
+        {
+            id: 6,
+            title: 'Legacy Application Modernization',
+            description: "Converted 5 of Inland Corporation's legacy desktop applications into web apps. Staff previously reached these apps only through Remote Desktop; the new versions run in the browser and are easier to maintain and access. All 5 are currently in user testing before official rollout.",
+            technologies: ['Web App', 'Legacy Modernization', 'Remote Desktop Replacement', 'Full-Stack Development'],
+            icon: WindowStack,
+            images: []
         },
         {
             id: 2,
             title: 'Information System (IS) - Web Application',
             description: 'A comprehensive web-based information system built with Microsoft Azure services. Features include report generation, contract management, and document handling. The system provides excel export capabilities and uses RDLC for advanced reporting. Utilizes stored procedures for optimized database operations.',
             technologies: ['VB.NET', 'ASP.NET', 'jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'MySQL', 'Azure', 'RDLC', 'Excel Generation'],
-            images: [
-                'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop'
-            ]
+            icon: FileEarmarkBarGraph,
+            images: []
         },
         {
             id: 3,
@@ -46,6 +57,18 @@ const Projects = () => {
                 thirdP1,
                 thirdP2,
                 thirdP3
+            ]
+        },
+        {
+            id: 1,
+            title: 'Game Development - Unity & C#',
+            description: 'An unlockables-type game developed with Unity and C# backend. This project showcases game mechanics, progression systems, and interactive gameplay features with a robust unlock system for players to achieve and discover.',
+            technologies: ['Unity', 'C#', 'Blender', 'Photoshop', 'Filmora'],
+            images: [
+                firstP1,
+                firstP2,
+                firstP3,
+                firstP4
             ]
         }
     ];
@@ -84,10 +107,15 @@ const Projects = () => {
                 <Container>
                     <h2>My Projects</h2>
                     <div className="projects-grid">
-                        {projects.map(project => (
-                            <div key={project.id} className="project-card" onClick={() => openModal(project, 0)}>
+                        {projects.map(project => {
+                            const hasImages = project.images.length > 0;
+                            const Icon = project.icon;
+                            return (
+                            <div key={project.id} className={`project-card ${hasImages ? 'clickable' : ''}`} onClick={() => hasImages && openModal(project, 0)}>
                                 <div className="project-image">
-                                    <img src={project.images[0]} alt={project.title} />
+                                    {hasImages
+                                        ? <img src={project.images[0]} alt={project.title} />
+                                        : <div className="project-placeholder">{Icon && <Icon size={64} />}</div>}
                                 </div>
                                 <h3>{project.title}</h3>
                                 <p>{project.description}</p>
@@ -96,8 +124,14 @@ const Projects = () => {
                                         <span key={tech} className="tech-tag">{tech}</span>
                                     ))}
                                 </div>
+                                {project.link && (
+                                    <div className="project-links">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Visit Live Site</a>
+                                    </div>
+                                )}
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
                     <Modal isOpen={isOpen && !!currentProject} onClose={closeModal}>
@@ -121,5 +155,3 @@ const Projects = () => {
         </section>
     );
 };
-
-export default Projects;

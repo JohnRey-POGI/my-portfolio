@@ -18,14 +18,17 @@ Visit my portfolio at: [https://johnrey-pogi.github.io/my-portfolio](https://joh
 
 1. **Home** - Animated typing hero text with call-to-action buttons
 2. **About** - Personal introduction and professional highlights
-3. **Skills** - Infinite scrolling technology showcase
-4. **Projects** - Portfolio of development projects with live demos
-5. **Contact** - Functional contact form with validation
-6. **Footer** - Navigation links and social media connections
+3. **Experience** - Work history timeline (Inland Corporation, Unitra Maritime, Makati Health Department) plus events attended
+4. **Skills** - Infinite scrolling technology showcase
+5. **Projects** - Portfolio of development projects with live demos
+6. **Contact** - Functional contact form with validation
+7. **Footer** - Navigation links and social media connections
 
 ### 🛠️ Technologies Used
 
 - **Frontend**: React 18, React Bootstrap, CSS3
+- **3D Background**: Three.js, React Three Fiber, Drei
+- **Contact Form**: EmailJS
 - **Icons**: React Bootstrap Icons
 - **Deployment**: GitHub Pages
 - **Build Tool**: Create React App

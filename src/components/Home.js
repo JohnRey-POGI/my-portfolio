@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react"
 import { Col, Container, Image, Row } from "react-bootstrap"
-import { ArrowRightCircle} from "react-bootstrap-icons"
+import { ArrowRightCircle, Download } from "react-bootstrap-icons"
 import howm from '../assets/img/project/Me.png'
 import './Home.css';
 
-const TEXT_CHANGING = ["my name is John", "I'm Full Stack Developer", "I'm Technical Support Specialist", "I'm Game Developer"];
+const TEXT_CHANGING = ["Full-Stack .NET Developer", "Junior System Developer", "SAP B1 & AWS Migration", "Legacy-to-Web Modernization"];
 
 export const Home = () => {
     const [text, setText] = useState('');
@@ -74,13 +74,14 @@ export const Home = () => {
                 <Container>
                     <Row className="align-items-center">
                         <Col xs={12} md={6} xl={7}>
-                            <span className="tagline">Welcome to my WORLD</span>
-                            <h1>{`Hi `}<span className="wrap">{text}</span></h1>
-                            <p>I'm a passionate developer with expertise in building modern web applications. I specialize in creating responsive designs and robust backend solutions. Let's build something amazing together!</p>
-                            <Col className="d-flex">
+                            <span className="tagline">Full-Stack Developer · Cavite, Philippines</span>
+                            <h1>Hi, I'm John Rey</h1>
+                            <h2 className="typing-role"><span className="wrap">{text}</span>&nbsp;</h2>
+                            <p>I'm a full-stack developer with nearly 4 years of experience building enterprise web applications. I've converted 5 legacy desktop apps into web apps (now in user testing), and I've worked on SAP Business One and AWS cloud migrations. Let's build something amazing together!</p>
+                            <Col className="d-flex flex-wrap gap-2">
                                 <button id="btnseemore" onClick={handleSeeMore}>See My Work&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
-                                &nbsp;
                                 <button id="btnletsconnect" onClick={handleLetsConnect}>Get In Touch&nbsp;<ArrowRightCircle size={25}></ArrowRightCircle></button>
+                                <a id="btnresume" href={`${process.env.PUBLIC_URL}/resume.pdf`} download="John Rey Sta. Ana - Resume.pdf">Download Resume&nbsp;<Download size={20}></Download></a>
                             </Col>
                         </Col>
                         <Col xs={12} md={6} xl={5}>

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavBar } from './components/NavBar.js';
 import { Home } from './components/Home.js';
 import { About } from './components/About.js';
+import { Experience } from './components/Experience.js';
 import { Skills } from './components/Skills.js';
 import { Projects } from './components/Projects.js';
 import { ContactMe } from './components/ContactMe.js';
@@ -23,6 +24,7 @@ function App() {
       <main>
         <Home></Home>
         <About></About>
+        <Experience></Experience>
         <Skills></Skills>
         <Projects></Projects>
         <ContactMe></ContactMe>

@@ -1,32 +1,27 @@
 [
     {
-        "title": "Visual Studio",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg",
+        "title": "SAP Business One",
+        "imagesource": "https://cdn.simpleicons.org/sap",
         "category": "programmer"
     },
     {
-        "title": "VsCode",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
+        "title": "AWS EC2",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
         "category": "programmer"
     },
     {
-        "title": "NetBeans",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-plain.svg",
+        "title": "Azure",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
         "category": "programmer"
     },
     {
-        "title": "PyCharm",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-plain.svg",
+        "title": "SQL Server",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
         "category": "programmer"
     },
     {
-        "title": "Android Studio",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-plain.svg",
-        "category": "programmer"
-    },
-    {
-        "title": "XAMPP",
-        "imagesource": "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg",
+        "title": "Oracle",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg",
         "category": "programmer"
     },
     {
@@ -35,58 +30,28 @@
         "category": "programmer"
     },
     {
-        "title": "Cpanel",
+        "title": "Visual Studio",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "VS Code",
+        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "XAMPP",
+        "imagesource": "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg",
+        "category": "programmer"
+    },
+    {
+        "title": "cPanel",
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cpanel/cpanel-original.svg",
         "category": "programmer"
     },
     {
-        "title": "Blender",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Filmora",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Unity",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Photoshop",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "MS Office",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Adobe Acrobat",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Nitro Pro",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
-        "category": "non-programmer"
-    },
-    {
         "title": "WordPress",
         "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "ChatGPT",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-plain.svg",
-        "category": "non-programmer"
-    },
-    {
-        "title": "Copilot",
-        "imagesource": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg",
         "category": "non-programmer"
     }
 ]

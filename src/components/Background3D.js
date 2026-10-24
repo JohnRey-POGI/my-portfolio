@@ -31,6 +31,19 @@ export const sectionConfig = {
     blur: 5
   },
 
+  experience: {
+    position: [-6, 1, 0],
+    tabletPosition: [-5, 1, 0],
+    mobilePosition: [-2, 1, -2],
+    color: "#3b82f6",
+    scale: 1.6,
+    tabletScale: 1.3,
+    mobileScale: 0.8,
+    ringScale: 1.2,
+    speed: 0.8,
+    blur: 5
+  },
+
   skills: {
     position: [-5, 0, 0],
     tabletPosition: [-4, 0, 0],
@@ -71,7 +84,7 @@ export const sectionConfig = {
   }
 };
 
-const Background3D = () => {
+export const Background3D = () => {
   const sections = Object.keys(sectionConfig);
   const activeSection = useActiveSection(sections);
   
@@ -118,7 +131,7 @@ const Background3D = () => {
     }}>
       <Canvas
         camera={{ position: [0, 0, 12], fov: 45 }}
-        dpr={[1, 2]} // Clamp pixel ratio to a maximum of 2 to prevent excessive canvas size on high-DPI devices
+        dpr={[1, 1.5]} // Clamp pixel ratio to a maximum of 1.5 to prevent excessive canvas size on high-DPI devices
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
@@ -137,5 +150,3 @@ const Background3D = () => {
     </div>
   );
 };
-
-export default Background3D;

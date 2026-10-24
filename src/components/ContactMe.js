@@ -75,44 +75,56 @@ export const ContactMe = () => {
             return;
         }
 
+        // EmailJS keys come from .env.local and are baked in at build time
+        const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+        const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+        if (!serviceId || !templateId || !publicKey) {
+            console.error("EmailJS is not configured: set REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID and REACT_APP_EMAILJS_PUBLIC_KEY in .env.local, then restart npm start / rebuild.");
+            setStatus({
+                success: false,
+                message: "The contact form is unavailable right now. Please email me at johnreystaana@gmail.com."
+            });
+            return;
+        }
+
         // Clear previous errors
         setErrors({});
         setIsLoading(true);
         setcontactmeButtonText('Sending...');
 
         try {
-            const result = await emailjs.send(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            await emailjs.send(
+                serviceId,
+                templateId,
                 {
                     name: formDetails.name,
                     email: formDetails.email,
                     message: formDetails.message,
                 },
-                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+                { publicKey }
             );
 
-            if (result.status === 200) {
-                setStatus({
-                    success: true,
-                    message: "Message sent successfully! I'll get back to you soon."
-                });
-                setformDetails(formInitialDetails);
-            }
+            setStatus({
+                success: true,
+                message: "Message sent successfully! I'll get back to you soon."
+            });
+            setformDetails(formInitialDetails);
 
         } catch (error) {
-            console.error("EmailJS Error:", error);
+            // EmailJS rejects with { status, text }, e.g. 400 "The service ID is invalid"
+            console.error("EmailJS Error:", error?.status, error?.text || error);
             setStatus({
                 success: false,
-                message: "Error sending message. Please try again later."
+                message: "Error sending message. Please try again later or email me at johnreystaana@gmail.com."
             });
         } finally {
             setcontactmeButtonText('Send');
+            setIsLoading(false);
 
-            // Optional: auto clear status after 5s
+            // Auto clear status after 10s
             setTimeout(() => {
                 setStatus({});
-                setIsLoading(false);
             }, 10000);
         }
     };

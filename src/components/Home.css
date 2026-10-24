@@ -77,6 +77,25 @@
   margin-left: 10px;
 }
 
+#btnresume {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 20px;
+  letter-spacing: 0.8px;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+#btnresume:hover {
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
 /* Profile image animation */
 .image-container {
   position: relative;
@@ -175,5 +194,19 @@
   }
   .banner p {
     font-size: 18px;
+  }
+}
+/* Typing role line under the name */
+.banner .typing-role {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--accent);
+  min-height: 1.3em;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .banner .typing-role {
+    font-size: 24px;
   }
 }
